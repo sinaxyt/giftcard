@@ -1,0 +1,110 @@
+<!-- Login Page -->
+<head>
+    <hr color="#FFD700">
+        <link rel="stylesheet" href="NEE.CSS">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <div class="login-container">
+        <h2>ورود</h2>
+        <form id="login-form">
+            <div class="input-container">
+                <input type="text" id="username" placeholder="شماره ی موبایل , جیمیل یا نام کاربری" required>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" placeholder="رمز عبور" required>
+            </div>
+            <button type="submit">ورود</button>
+        </form>
+    </div>
+    
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+    
+        h2 {
+            color: yellow;
+        }
+    
+        .input-container {
+            margin-bottom: 15px;
+        }
+    
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #222;
+            border: 1px solid yellow;
+            border-radius: 5px;
+            color: white;
+        }
+    
+        input::placeholder {
+            color: #bbb;
+        }
+    
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #f1c232;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .login-container {
+                width: 90%;
+                padding: 20px;
+            }
+    
+            input {
+                padding: 12px;
+                font-size: 16px;
+            }
+    
+            button {
+                padding: 12px;
+                font-size: 16px;
+            }
+    
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'sina' && password === '1391@sina') {
+                window.location.href = 'user.html'; // انتقال به صفحه پروفایل
+            } else {
+                alert('نام کاربری یا رمز عبور اشتباه است.');
+            }
+        });
+    </script>

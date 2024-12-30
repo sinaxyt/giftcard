@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خرید و فروش گیفت کارت</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #FFD700;
+      padding: 15px;
+      text-align: center;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    .box {
+      width: 200px;
+      height: 250px;
+      border: 2px solid #FFD700;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .box:hover {
+      transition: all 1.5s;
+      transform: scale(1.05);
+    }
+    .box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-bottom: 2px solid #FFD700;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #FFD700;
+      color: #000;
+    }
+    .cart-container {
+      display: none;
+      background-color: #fff;
+      width: 400px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-header h2 {
+      margin: 0;
+      color: #FFEB3B;
+    }
+    .cart-items {
+      margin-top: 20px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+    .empty-cart-message {
+      color: #777;
+    }
+    .pay-btn {
+      background-color: #FFEB3B;
+      color: #333;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      font-size: 16px;
+    }
+    .pay-btn:hover {
+      opacity: 1;
+    }
+    .pay-btn:active {
+      background-color: #f1c40f;
+    }
+  </style>
+</head>
+<body>
+  <!-- هدر سایت -->
+  <header>
+      <h1 class="font">خرید و فروش گیفت کارت</h1>
+  </header>
+
+  <!-- باکس‌های محصولات -->
+  <section id="products">
+    <div class="box" onclick="addToCart('گیفت کارت پلی استیشن')">
+      <img src="img/play stayshen - Copy.jpg" alt="محصول 1">
+      <p class="zardfont">گیفت کارت پلی استیشن</p>
+    </div>
+    <div class="box" onclick="addToCart('گیفت کارت اکس باکس')">
+      <img src="img/xboximg - Copy.jpg" alt="محصول 2">
+      <p class="zardfont">گیفت کارت اکس باکس</p>
+    </div>
+    <div class="box" onclick="addToCart('گیفت کارت استیم')">
+      <img src="img/staemimg.jpg" alt="محصول 3">
+      <p class="zardfont">گیفت کارت استیم</p>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="box" onclick="addToCart('فروش انواع اکنت')">
+      <img src="img/platformimg - Copy.png" alt="محصول 4">
+      <p class="zardfont">فروش انواع اکنت</p>
+    </div>
+    <div class="box" onclick="addToCart('فروش شماره مجازی')">
+      <img src="img/magaziimg - Copy.jpg" alt="محصول 5">
+      <p class="zardfont">فروش شماره مجازی</p>
+    </div>
+    <div class="box" onclick="addToCart('فروش سرور v2ray')">
+      <img src="img/server img - Copy.png" alt="محصول 6">
+      <p class="zardfont">فروش سرور v2ray</p>
+    </div>
+    <div class="box" onclick="addToCart('فروش اکانت صرافی')">
+      <img src="img/sarafeimg - Copy.png" alt="محصول 7">
+      <p class="zardfont">فروش اکانت صرافی</p>
+    </div>
+    <div class="box" onclick="addToCart('فروش تلگرام پریمیوم')">
+      <img src="img/telegrampeimg - Copy.jpg" alt="محصول 8">
+      <p class="zardfont">فروش تلگرام پریمیوم</p>
+    </div>
+  </section>
+
+  
+
+  <!-- فوتر سایت -->
+  <footer>
+    <h1>اکانت های شما را خریداریم</h1>
+  </footer>
+
+
+
+
+  <section id="products">
+    <div class="box" onclick="addToCart('خرید اکانت کلش اف کلنز')">
+      <img src="img/clashimg - Copy.jpg" alt="محصول 9">
+      <p class="zardfont">خرید اکانت کلش اف کلنز</p>
+    </div>
+    <div class="box" onclick="addToCart('خرید اکانت کالاف موبایل')">
+      <img src="img/call of mobail img - Copy.jpg" alt="محصول 10">
+      <p class="zardfont">خرید اکانت کالاف موبایل</p>
+    </div>
+    <div class="box" onclick="addToCart('خرید اکانت پاپجی')">
+      <img src="img/pabgimg.jpg" alt="محصول 11">
+      <p class="zardfont">خرید اکانت پاپجی</p>
+    </div>
+  </section>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #000000;
+      direction: rtl;
+      margin-right: 20px;
+    }
+    h2, p {
+      color: #FFD700;
+      margin-right: 20px;
+    }
+    .container {
+      margin-right: 20px;
+    }
+  </style>
+
+  <div class="container">
+    <h2>درباره طراح سایت</h2>
+    <p>این سایت توسط تیم طراحی حرفه‌ای tabrizpax با هدف ارائه بهترین تجربه کاربری طراحی شده است.</p>
+  </div>
+
+  <div class="container">
+    <h2>امضای اعتماد شما در اینجاست</h2>
+    <div class="trust-seal">
+      <img src="img/ثفثئشیهئل.jpg" alt="برند اعتماد" style="width: 100px; height: auto;">
+    </div>
+  </div>
+
+  <footer class="footer-menu">
+    <nav class="menu">
+      <ul>
+        <li style="position: absolute; left: 0; margin-left: 1450px;"><a href="login.html" id="profile-link"><img src="img/user.png" alt="پروفایل" style="width: 24px; height: 24px;"></a></li>
+        <li style="text-align: center; width: 100%;"><a href="#" id="menu-link"><img src="img/menu-burger.png" alt="منو" style="width: 24px; height: 24px;"></a></li>
+        <li style="position: absolute; left: 0; margin: right 200px;;"><a href="#" id="cart-link"><img src="img/shopping-cart.png" alt="سبد خرید" style="width: 24px; height: 24px;"></a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- سبد خرید -->
+  <div class="cart-container" id="cart-container">
+    <div class="cart-header">
+      <span class="close-btn" onclick="closeCart()">&#10006;</span>
+      <h2>سبد خرید</h2>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="empty-cart-message" id="empty-cart-message">سبد خرید شما خالی است</p>
+    </div>
+    <button class="pay-btn" onclick="alert('لینک پرداخت به زودی فعال خواهد شد.')">ثبت پرداخت</button>
+  </div>
+
+  <script>
+    let cart = []; // آرایه‌ای برای ذخیره محصولات سبد خرید
+
+    // اضافه کردن محصول به سبد خرید
+    function addToCart(product) {
+      cart.push(product); // محصول به آرایه سبد خرید اضافه می‌شود
+      updateCart(); // به‌روزرسانی وضعیت سبد خرید
+    }
+
+    // به‌روزرسانی سبد خرید
+    function updateCart() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      const emptyCartMessage = document.getElementById('empty-cart-message');
+      const cartContainer = document.getElementById('cart-container');
+
+      // پاک کردن محتویات قبلی سبد خرید
+      cartItemsContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+        emptyCartMessage.style.display = 'block'; // اگر سبد خرید خالی بود، پیغام نشان داده می‌شود
+        cartContainer.style.display = 'none'; // اگر سبد خرید خالی باشد، سبد خرید نمایش داده نمی‌شود
+      } else {
+        emptyCartMessage.style.display = 'none'; // اگر سبد خرید پر بود، پیغام مخفی می‌شود
+        cartContainer.style.display = 'block'; // نمایش سبد خرید
+
+        // ایجاد هر آیتم در سبد خرید
+        cart.forEach((item, index) => {
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+          cartItem.innerHTML = `
+            <span>${item}</span>
+            <button onclick="removeFromCart(${index})">حذف</button>
+          `;
+          cartItemsContainer.appendChild(cartItem);
+        });
+      }
+    }
+
+    // حذف محصول از سبد خرید
+    function removeFromCart(index) {
+      cart.splice(index, 1); // حذف محصول از آرایه سبد خرید
+      updateCart(); // به‌روزرسانی سبد خرید
+    }
+
+    // بستن سبد خرید
+    function closeCart() {
+      const cartContainer = document.getElementById('cart-container');
+      cartContainer.style.display = 'none'; // پنهان کردن سبد خرید
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

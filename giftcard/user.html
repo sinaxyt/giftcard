@@ -1,0 +1,115 @@
+<!-- Profile Page -->
+
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div class="profile-container">
+    <!-- Profile Picture -->
+    <div class="profile-picture">
+        <img src="img/images.jpg" alt="Profile Picture">
+    </div>
+
+    <!-- User Info -->
+    <div class="user-info">
+        <h2>نام: sina</h2>
+        <p>شماره موبایل: 90*****0905</p>
+    </div>
+
+    <!-- Wallet Info -->
+    <div class="wallet-info">
+        <h3>کیف پول:</h3>
+        <p>15,732,000 ریال</p>
+    </div>
+
+    <!-- Transactions -->
+    <div class="transactions">
+        <h3>تراکنش‌ها:</h3>
+        <p>200,000 ریال</p>
+        <hr>
+        <p>375,000 ریال </p>
+        <hr>
+        <p> 458,270 ریال </p>
+        <hr>
+        <p>781,000 ریال</p>
+        <hr>
+        <p>598,000 ریال</p>
+        <hr>
+        <p>157,000 ریال</p>
+        <hr>
+        <p>120,000 ریال</p>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile-container {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid yellow;
+        margin-bottom: 15px;
+    }
+
+    .user-info h2, .wallet-info h3, .transactions h3 {
+        color: yellow;
+    }
+
+    .wallet-info p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .transactions p {
+        margin: 5px 0;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background: yellow;
+        margin: 10px 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+        .profile-container {
+            width: 90%;
+            padding: 15px;
+        }
+
+        .profile-picture img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .wallet-info p {
+            font-size: 16px;
+        }
+
+        .user-info h2, .wallet-info h3, .transactions h3 {
+            font-size: 18px;
+        }
+
+        .transactions p {
+            font-size: 14px;
+        }
+    }
+</style>

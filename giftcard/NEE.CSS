@@ -1,0 +1,25 @@
+@font-face{
+
+font-family: vazir;
+
+src: url(fonts/vazir/woff2/Vazir-Bold.woff2);
+
+}
+
+.zardfont{
+ color: #FFD700;
+
+
+}
+
+.sand{
+
+transition: all 3s;
+
+}
+
+.sand :hover{
+
+transform: scale(0.5);
+
+}
